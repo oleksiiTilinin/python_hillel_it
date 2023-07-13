@@ -1,37 +1,36 @@
 import random
 
-NUMS_SIZE = 10
-
-negative_sum = 0
-even_sum = 0
-odd_sum = 0
-index_sum = 1
+LIST_SIZE = 10
 
 try:
     numbers = []
-    for i in range(NUMS_SIZE):
+    for i in range(LIST_SIZE):
         numbers.append(random.randint(1, 10))
     print(numbers)
     print(" --------------------------------")
     # Суму негативних чисел;
+    negative_sum = 0
     for i in numbers:
         if i < 0:
             negative_sum += i
     print("The sum of negative numbers is:", negative_sum, "\n", "--------------------------------")
 
     # Суму парних чисел
+    even_sum = 0
     for i in numbers:
         if i % 2 == 0:
             even_sum += i
     print("The sum of paired numbers is:", even_sum, "\n", "--------------------------------")
 
     # Суму непарних чисел;
+    odd_sum = 0
     for i in numbers:
         if i % 2 != 0:
             odd_sum += i
     print("The sum of unpaired numbers is:", odd_sum, "\n", "--------------------------------")
 
     # Добуток елементів з кратними індексами 3;
+    index_sum = 1
     for i in range(0, len(numbers), 3):
         index_sum *= numbers[i]
     print("Product of elements with multiple indices 3 is:", index_sum, "\n", "--------------------------------")
@@ -78,15 +77,5 @@ try:
 
     print("The sum of the elements between the first and last positive elements is:", sum_between, "\n",
           "--------------------------------")
-
-
-
-
-
-
-
-
-
-
 except Exception as e:
     print(e)
